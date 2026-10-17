@@ -71,6 +71,15 @@ data/grains/
 | `--noise` | 0.05 | 探测器噪声幅度 |
 | `--pits` | 90 | 每张图的蚀坑 / 麻点数 |
 
+## 自检
+
+```bash
+pip install -e . pytest
+make test        # pytest：确定性、形状、统计合法性
+make e2e         # 真跑一次 CLI，确认入口可用
+make showcase    # 重新生成 docs/showcase.png
+```
+
 ## 输出约定
 
 - **掩膜**是调色板 PNG：`0` 为背景，实例 `i` 使用调色板索引 `i % 255 + 1`；叠加图里同色即同实例。
